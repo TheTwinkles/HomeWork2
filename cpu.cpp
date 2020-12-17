@@ -62,23 +62,7 @@ CPU &CPU::operator=(const CPU &rhs)
     return *this;
 }
 
-void CPU::setManufacturer(const string sManufacturer)
-{
-    manufacturer = sManufacturer;
-}
-string CPU::getManufacturer() const
-{
-    return manufacturer;
-}
 
-void CPU::setCost(const int sCost)
-{
-    cost = sCost;
-}
-int CPU::getCost() const
-{
-    return cost;
-}
 
 void CPU::setSocket(const string sSocket)
 {
@@ -127,8 +111,8 @@ int CPU::getMem_freq() const
 
 void CPU::show() const
 {
-    cout << manufacturer << '\n'
-         << cost << '\n'
+    cout << getManufacturer() << '\n'
+         << getCost() << '\n'
          << socket << '\n'
          << core_num << '\n'
          << proc_speed << '\n'

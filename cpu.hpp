@@ -1,15 +1,11 @@
 #ifndef CPU_HPP
 #define CPU_HPP
 
-#include <string>
+#include "components.hpp"
 
-
-
-class CPU
+class CPU : Components //дочерний класс "Процессор"
 {
 private:
-    std::string manufacturer; //производитель
-    int cost; // цена
     std::string socket; //сокет
     int core_num; //кол-во ядер
     int proc_speed; //тактовая частота
@@ -17,9 +13,9 @@ private:
     int mem_freq; //частота памяти
 
 public:
-    CPU();
+    CPU(); //прототип конструктора по умолчанию
 
-    CPU(const std::string sManufacturer,
+    CPU(const std::string sManufacturer, //прототип конструктора с параметрами
         const int sCost,
         const std::string sSocket,
         const int sCore_num,
@@ -28,19 +24,13 @@ public:
         const int sMem_freq
         );
 
-    CPU(const CPU &other);
+    CPU(const CPU &other); //прототип конструктора копирования
 
-    ~CPU();
+    ~CPU(); //прототип деструктора по умолчанию
 
-    CPU& operator=(const CPU &rhs);
+    CPU& operator=(const CPU &rhs); //прототип перегрузки оператора присваивания
 
     // геттеры и сеттеры
-    void setManufacturer(const std::string sManufacturer);
-    std::string getManufacturer() const;
-
-    void setCost(const int sCost);
-    int getCost() const;
-
     void setSocket(const std::string sSocket);
     std::string getSocket() const;
 
@@ -56,7 +46,7 @@ public:
     void setMem_freq(const int sMem_freq);
     int getMem_freq() const;
 
-    void show() const;
+    void show() const; //прототип функции вывода
 };
 
 #endif // CPU_HPP
