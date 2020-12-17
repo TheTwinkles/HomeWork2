@@ -9,6 +9,7 @@ class CPU
 {
 private:
     std::string manufacturer; //производитель
+    int cost; // цена
     std::string socket; //сокет
     int core_num; //кол-во ядер
     int proc_speed; //тактовая частота
@@ -19,6 +20,7 @@ public:
     CPU();
 
     CPU(const std::string sManufacturer,
+        const int sCost,
         const std::string sSocket,
         const int sCore_num,
         const int sProc_speed,
@@ -35,6 +37,9 @@ public:
     // геттеры и сеттеры
     void setManufacturer(const std::string sManufacturer);
     std::string getManufacturer() const;
+
+    void setCost(const int sCost);
+    int getCost() const;
 
     void setSocket(const std::string sSocket);
     std::string getSocket() const;

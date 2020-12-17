@@ -4,7 +4,8 @@
 
 using namespace std;
 
-CPU::CPU(): manufacturer("1"),
+CPU::CPU(): manufacturer("0"),
+    cost(1),
     socket("2"),
     core_num(3),
     proc_speed(4),
@@ -14,11 +15,12 @@ CPU::CPU(): manufacturer("1"),
 
 }
 
-CPU::CPU(const string sManufacturer,
+CPU::CPU(const string sManufacturer, const int sCost,
          const string sSocket, const int sCore_num,
          const int sProc_speed, const string sMem_type,
          const int sMem_freq):
     manufacturer(sManufacturer),
+    cost(sCost),
     socket(sSocket),
     core_num(sCore_num),
     proc_speed(sProc_speed),
@@ -30,6 +32,7 @@ CPU::CPU(const string sManufacturer,
 
 CPU::CPU(const CPU &other):
     manufacturer(other.manufacturer),
+    cost(other.cost),
     socket(other.socket),
     core_num(other.core_num),
     proc_speed(other.proc_speed),
@@ -49,6 +52,7 @@ CPU &CPU::operator=(const CPU &rhs)
     if (this == &rhs) return *this;
 
     manufacturer = rhs.manufacturer;
+    cost = rhs.cost;
     socket = rhs.socket;
     core_num = rhs.core_num;
     proc_speed = rhs.proc_speed;
@@ -65,6 +69,15 @@ void CPU::setManufacturer(const string sManufacturer)
 string CPU::getManufacturer() const
 {
     return manufacturer;
+}
+
+void CPU::setCost(const int sCost)
+{
+    cost = sCost;
+}
+int CPU::getCost() const
+{
+    return cost;
 }
 
 void CPU::setSocket(const string sSocket)
@@ -115,6 +128,7 @@ int CPU::getMem_freq() const
 void CPU::show() const
 {
     cout << manufacturer << '\n'
+         << cost << '\n'
          << socket << '\n'
          << core_num << '\n'
          << proc_speed << '\n'
