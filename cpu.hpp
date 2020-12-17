@@ -3,6 +3,8 @@
 
 #include <string>
 
+
+
 class CPU
 {
 private:
@@ -15,7 +17,20 @@ private:
 
 public:
     CPU();
+
+    CPU(const std::string sManufacturer,
+        const std::string sSocket,
+        const int sCore_num,
+        const int sProc_speed,
+        const std::string sMem_type,
+        const int sMem_freq
+        );
+
+    CPU(const CPU &other);
+
     ~CPU();
+
+    CPU& operator=(const CPU &rhs);
 
     // геттеры и сеттеры
     void setManufacturer(const std::string sManufacturer);

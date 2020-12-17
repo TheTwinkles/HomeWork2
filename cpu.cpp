@@ -14,9 +14,48 @@ CPU::CPU(): manufacturer("1"),
 
 }
 
+CPU::CPU(const string sManufacturer,
+         const string sSocket, const int sCore_num,
+         const int sProc_speed, const string sMem_type,
+         const int sMem_freq):
+    manufacturer(sManufacturer),
+    socket(sSocket),
+    core_num(sCore_num),
+    proc_speed(sProc_speed),
+    mem_type(sMem_type),
+    mem_freq(sMem_freq)
+{
+
+}
+
+CPU::CPU(const CPU &other):
+    manufacturer(other.manufacturer),
+    socket(other.socket),
+    core_num(other.core_num),
+    proc_speed(other.proc_speed),
+    mem_type(other.mem_type),
+    mem_freq(other.mem_freq)
+{
+
+}
+
 CPU::~CPU()
 {
 
+}
+
+CPU &CPU::operator=(const CPU &rhs)
+{
+    if (this == &rhs) return *this;
+
+    manufacturer = rhs.manufacturer;
+    socket = rhs.socket;
+    core_num = rhs.core_num;
+    proc_speed = rhs.proc_speed;
+    mem_type = rhs.mem_type;
+    mem_freq = rhs.mem_freq;
+
+    return *this;
 }
 
 void CPU::setManufacturer(const string sManufacturer)
