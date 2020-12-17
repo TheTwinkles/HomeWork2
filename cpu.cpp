@@ -121,7 +121,7 @@ void CPU::show() const
          << "Memory type: " << mem_type << '\n'
          << "Memory frequency: " << mem_freq << endl;
 
-    cout << "------get methods Output------" << endl;
+    cout << "\n------get methods Output------" << endl;
     cout << "Manufacturer: " << getManufacturer() << '\n'
          << "Cost: " << getCost() << '\n'
          << "Socket: " << socket << '\n'
