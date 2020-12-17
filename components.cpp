@@ -1,5 +1,7 @@
 #include "components.hpp"
 
+#include <iostream>
+
 using namespace std;
 
 Components::Components() : manufacturer("Undefined"),
@@ -53,4 +55,10 @@ void Components::setCost(const int sCost)
 int Components::getCost() const
 {
     return cost;
+}
+
+void Components::show() const
+{
+    cout << "Manufacturer: " << manufacturer << '\n'
+         << "Cost: " << cost << endl;
 }

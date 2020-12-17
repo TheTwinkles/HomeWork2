@@ -27,6 +27,8 @@ public:
 
     void setCost(const int sCost);
     int getCost() const;
+
+    virtual void show() const; //прототип функции вывода данных на экран
 };
 
 #endif // COMPONENTS_HPP
