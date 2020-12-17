@@ -4,13 +4,14 @@
 
 using namespace std;
 
-CPU::CPU(): manufacturer("0"),
-    cost(1),
-    socket("2"),
-    core_num(3),
-    proc_speed(4),
-    mem_type("5"),
-    mem_freq(6)
+CPU::CPU():
+    Components(),
+
+    socket("Undefined socket"),
+    core_num(0),
+    proc_speed(0),
+    mem_type("Undefined memory type"),
+    mem_freq(0)
 {
 
 }
@@ -19,8 +20,8 @@ CPU::CPU(const string sManufacturer, const int sCost,
          const string sSocket, const int sCore_num,
          const int sProc_speed, const string sMem_type,
          const int sMem_freq):
-    manufacturer(sManufacturer),
-    cost(sCost),
+    Components(sManufacturer, sCost),
+
     socket(sSocket),
     core_num(sCore_num),
     proc_speed(sProc_speed),
@@ -31,8 +32,8 @@ CPU::CPU(const string sManufacturer, const int sCost,
 }
 
 CPU::CPU(const CPU &other):
-    manufacturer(other.manufacturer),
-    cost(other.cost),
+    Components(other),
+
     socket(other.socket),
     core_num(other.core_num),
     proc_speed(other.proc_speed),
@@ -51,8 +52,8 @@ CPU &CPU::operator=(const CPU &rhs)
 {
     if (this == &rhs) return *this;
 
-    manufacturer = rhs.manufacturer;
-    cost = rhs.cost;
+    Components::operator=(rhs);
+
     socket = rhs.socket;
     core_num = rhs.core_num;
     proc_speed = rhs.proc_speed;
@@ -111,11 +112,21 @@ int CPU::getMem_freq() const
 
 void CPU::show() const
 {
-    cout << getManufacturer() << '\n'
-         << getCost() << '\n'
-         << socket << '\n'
-         << core_num << '\n'
-         << proc_speed << '\n'
-         << mem_type << '\n'
-         << mem_freq << endl;
+    cout << "-----virual method output-----" << endl;
+    Components::show();
+    cout << "Cost: " << getCost() << '\n'
+         << "Socket: " << socket << '\n'
+         << "Number of cores: " << core_num << '\n'
+         << "Processor speed: " << proc_speed << '\n'
+         << "Memory type: " << mem_type << '\n'
+         << "Memory frequency: " << mem_freq << endl;
+
+    cout << "------get methods Output------" << endl;
+    cout << "Manufacturer: " << getManufacturer() << '\n'
+         << "Cost: " << getCost() << '\n'
+         << "Socket: " << socket << '\n'
+         << "Number of cores: " << core_num << '\n'
+         << "Processor speed: " << proc_speed << '\n'
+         << "Memory type: " << mem_type << '\n'
+         << "Memory frequency: " << mem_freq << endl;
 }
