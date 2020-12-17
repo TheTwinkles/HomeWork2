@@ -15,6 +15,26 @@ private:
 
 public:
     CPU();
+    ~CPU();
+
+    // геттеры и сеттеры
+    void setManufacturer(const std::string sManufacturer);
+    std::string getManufacturer() const;
+
+    void setSocket(const std::string sSocket);
+    std::string getSocket() const;
+
+    void setCore_num(const int sCore_num);
+    int getCore_num() const;
+
+    void setProc_speed(const int sProc_speed);
+    int getProc_speed() const;
+
+    void setMem_type(const std::string sMem_type);
+    std::string getMem_type() const;
+
+    void setMem_freq(const int sMem_freq);
+    int getMem_freq() const;
 };
 
 #endif // CPU_HPP
