@@ -4,7 +4,12 @@
 
 using namespace std;
 
-CPU::CPU()
+CPU::CPU(): manufacturer("1"),
+    socket("2"),
+    core_num(3),
+    proc_speed(4),
+    mem_type("5"),
+    mem_freq(6)
 {
 
 }

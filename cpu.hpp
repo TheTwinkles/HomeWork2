@@ -35,6 +35,8 @@ public:
 
     void setMem_freq(const int sMem_freq);
     int getMem_freq() const;
+
+    void show() const;
 };
 
 #endif // CPU_HPP
