@@ -10,8 +10,11 @@ int main()
     cpu.show();
 
     //показ работы всех методов класса
-    cpu.setManufacturer("001");
+    cpu.setManufacturer("000");
     cout << cpu.getManufacturer() << endl;
+
+    cpu.setCost(100);
+    cout << cpu.getCost() << endl;
 
     cpu.setSocket("002");
     cout << cpu.getSocket() << endl;
