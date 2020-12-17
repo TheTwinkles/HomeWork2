@@ -19,6 +19,8 @@ public:
 
     ~Components(); //прототип деструктора по умолчанию
 
+    Components& operator=(const Components &rhs); //прототип перегрузки оператора присваивания
+
     //геттеры и сеттеры
     void setManufacturer(const std::string sManufacturer);
     std::string getManufacturer() const;

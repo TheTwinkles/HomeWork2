@@ -2,15 +2,39 @@
 
 using namespace std;
 
-Components::Components() : manufacturer("Intel"),
-    cost(12990)
+Components::Components() : manufacturer("Undefined"),
+    cost(0)
 {
 
 }
 
-Components::Components(const string sManufacturer, const int sCost)
+Components::Components(const string sManufacturer, const int sCost):
+    manufacturer(sManufacturer),
+    cost(sCost)
 {
 
+}
+
+Components::Components(const Components &other):
+    manufacturer(other.manufacturer),
+    cost(other.cost)
+{
+
+}
+
+Components::~Components()
+{
+
+}
+
+Components &Components::operator=(const Components &rhs)
+{
+    if (this == &rhs) return *this;
+
+    manufacturer = rhs.manufacturer;
+    cost = rhs.cost;
+
+    return *this;
 }
 
 void Components::setManufacturer(const string sManufacturer)
