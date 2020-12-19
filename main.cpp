@@ -14,6 +14,9 @@ int main()
     cout << "Default Constructor Output" << endl;
     cpu.show();
 
+    system("pause");
+    system("cls");
+
     cout << "\n//////////////////////////////\n" << endl;
     cout << "Parametric Constructor Output" << endl;
     CPU cpu1("Intel",

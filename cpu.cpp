@@ -114,8 +114,7 @@ void CPU::show() const
 {
     cout << "-----virual method output-----" << endl;
     Components::show();
-    cout << "Cost: " << getCost() << '\n'
-         << "Socket: " << socket << '\n'
+    cout << "Socket: " << socket << '\n'
          << "Number of cores: " << core_num << '\n'
          << "Processor speed: " << proc_speed << '\n'
          << "Memory type: " << mem_type << '\n'

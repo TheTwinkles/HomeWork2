@@ -46,7 +46,7 @@ public:
     void setMem_freq(const int sMem_freq);
     int getMem_freq() const;
 
-    void show() const; //прототип функции вывода
+    virtual void show() const; //прототип функции вывода
 };
 
 #endif // CPU_HPP
