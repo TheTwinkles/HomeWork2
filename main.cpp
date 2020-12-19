@@ -9,7 +9,7 @@ int main()
     CPU cpu; //вызывается конструктор по умолчанию со списком инициализации
     Components component; //вызывается конструктор по умолчанию
 
-
+    //
     cout << "\n//////////////////////////////\n" << endl;
     cout << "Default Constructor Output" << endl;
     cpu.show();
